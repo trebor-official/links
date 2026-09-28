@@ -49,7 +49,7 @@ nav{gap:12px;border-top:0}.card{overflow:hidden;min-height:126px;padding:17px 18
     <label>E-Mail für eine Antwort (optional)<input name="email" type="email" maxlength="254" autocomplete="email" inputmode="email" aria-describedby="reply-help"></label>
     <p id="reply-help">Du kannst auch ohne Adresse schreiben. Dann können wir dir allerdings nicht antworten.</p>
     <label class="contact-honey" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-    <p class="contact-security">Nachrichten und freiwillige Kontaktdaten werden zur Bearbeitung deiner Anfrage gespeichert. Beim Öffnen dieses Formulars wird der Bot-Schutz von Cloudflare automatisch geladen. Es sind keine weiterführenden Datenschutzhinweise hinterlegt.</p>
+    <p class="contact-security">Nachrichten und freiwillige Kontaktdaten werden zur Bearbeitung deiner Anfrage gespeichert. Beim Öffnen dieses Formulars wird der Bot-Schutz von Cloudflare automatisch geladen. <a href='datenschutz.html' target='_blank' rel='noopener noreferrer'>Datenschutzhinweise</a></p>
     <button class="contact-retry" type="button" hidden>Bot-Prüfung erneut laden</button><div class="contact-widget"></div><p class="contact-bot-status" role="status"></p>
     <dialog class="contact-confirm" hidden role="alertdialog" aria-labelledby="anonymous-title" aria-describedby="anonymous-help"><h2 id="anonymous-title">Ohne Antwortmöglichkeit senden?</h2><p id="anonymous-help">Ohne E-Mail-Adresse können wir dir nicht antworten. Möchtest du eine Adresse ergänzen oder die Nachricht trotzdem senden?</p><button type="button" class="contact-back">Adresse ergänzen</button><button type="button" class="contact-anonymous">Trotzdem ohne E-Mail senden</button></dialog>
     <p class="contact-status" role="status" aria-live="polite"></p><button class="contact-send" type="submit">Nachricht senden</button>
@@ -74,7 +74,7 @@ nav{gap:12px;border-top:0}.card{overflow:hidden;min-height:126px;padding:17px 18
   <div class="lightbox-tools"><button class="lightbox-prev" type="button" aria-label="Vorheriges großes Bild">←</button><span class="lightbox-count">1 / 8</span><button class="lightbox-next" type="button" aria-label="Nächstes großes Bild">→</button></div>
 </dialog></div>
 <div class="closing" aria-hidden="true"><span>KEIN FESTES ZIEL.<br>ABER ALLE WEGE HIER.</span><span>TAKE A DIFFERENT TURN.</span></div>
-<footer><span class="brand">treboR /</span><span class="footer-note">BIS ZUR NÄCHSTEN RUNDE.</span><div class="legal"></div></footer></main>
+<footer><span class="brand">treboR /</span><span class="footer-note">BIS ZUR NÄCHSTEN RUNDE.</span><div class="legal"><a href="impressum.html" rel="noopener noreferrer">Impressum</a> <a href="datenschutz.html" rel="noopener noreferrer">Datenschutz</a></div></footer></main>
 <script>function updateSchedule(){const now=Date.now();document.querySelectorAll('[data-start]').forEach(a=>{a.hidden=Boolean((a.dataset.start && now<Number(a.dataset.start))||(a.dataset.end && now>=Number(a.dataset.end)));});}updateSchedule();setInterval(updateSchedule,30000);
 const scene=document.querySelector('.shooting');
 if(scene){
@@ -167,4 +167,34 @@ if(scene){
     finally{busy=false;submit.disabled=false;d.querySelector('.contact-anonymous').disabled=false;resetChallenge();}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(false);});d.querySelector('.contact-anonymous').addEventListener('click',()=>send(true));
+})();</script><script>const treborMetricsEndpoint="https:\/\/trebor-contact.trebor-official.workers.dev";</script><script>(()=>{
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),active=new WeakMap();
+  function count(kind,link=''){
+    if(!treborMetricsEndpoint||navigator.globalPrivacyControl||navigator.doNotTrack==='1')return;
+    fetch(treborMetricsEndpoint.replace(/\/$/,'')+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,link}),credentials:'omit',keepalive:true,referrerPolicy:'no-referrer'}).catch(()=>{});
+  }
+  let counted=false;function view(){if(!counted&&document.visibilityState==='visible'){counted=true;count('view');}}view();document.addEventListener('visibilitychange',view);
+  document.querySelectorAll('a.card[data-link-id]').forEach(card=>{
+    card.addEventListener('click',e=>{
+      count('click',card.dataset.linkId);
+      if(reduced.matches)return;
+      const mode=card.dataset.effect;if(mode==='none')return;
+      (active.get(card)||[]).forEach(a=>a.cancel());card.querySelectorAll('.click-particle').forEach(n=>n.remove());const animations=[];active.set(card,animations);
+      const animate=(node,frames,options)=>{const a=node.animate(frames,options);animations.push(a);return a;};
+      const motion={pulse:[{transform:'scale(1)'},{transform:'scale(.95)'},{transform:'scale(1)'}],bounce:[{transform:'translateY(0)'},{transform:'translateY(-9px)'},{transform:'translateY(2px)'},{transform:'translateY(0)'}],tilt:[{transform:'rotate(0)'},{transform:'rotate(-2deg)'},{transform:'rotate(1deg)'},{transform:'rotate(0)'}],glow:[{boxShadow:'0 0 0 0 transparent'},{boxShadow:'inset 0 0 32px var(--accent)'},{boxShadow:'0 0 0 0 transparent'}]};
+      if(motion[mode]){animate(card,motion[mode],{duration:500,easing:'ease-out'});return;}
+      const rect=card.getBoundingClientRect(),x=e.detail?e.clientX-rect.left:rect.width/2,y=e.detail?e.clientY-rect.top:rect.height/2;
+      const amount=['hearts','sparks'].includes(mode)?7:1;
+      for(let i=0;i<amount;i++){
+        const n=document.createElement('span');n.className='click-particle';n.setAttribute('aria-hidden','true');n.style.cssText='pointer-events:none;position:absolute;z-index:3;left:'+x+'px;top:'+y+'px;color:var(--accent);';card.append(n);
+        let frames;
+        if(mode==='hearts'){n.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21 3 12C-3 5 6-1 12 6 18-1 27 5 21 12Z"/></svg>';frames=[{transform:'translate(-50%,-50%) scale(.4)',opacity:1},{transform:`translate(${(i-3)*25}px,${-35-Math.abs(i-3)*9}px) scale(1)`,opacity:0}];}
+        else if(mode==='sparks'){n.style.width='7px';n.style.height='7px';n.style.borderRadius='50%';n.style.background='var(--accent)';const angle=i*Math.PI*2/7;frames=[{transform:'scale(1)',opacity:1},{transform:`translate(${Math.cos(angle)*80}px,${Math.sin(angle)*65}px) scale(0)`,opacity:0}];}
+        else if(mode==='shine'){n.style.cssText+='left:-30%;top:-30%;height:160%;width:25%;background:linear-gradient(90deg,transparent,#ffffff90,transparent);';frames=[{transform:'skewX(-20deg) translateX(0)',opacity:0},{opacity:1},{transform:'skewX(-20deg) translateX(700%)',opacity:0}];}
+        else {n.style.cssText+='width:30px;height:30px;border:2px solid var(--accent);border-radius:50%;';frames=[{transform:'translate(-50%,-50%) scale(0)',opacity:1},{transform:'translate(-50%,-50%) scale(18)',opacity:0}];}
+        const a=animate(n,frames,{duration:650,easing:'ease-out'});a.finished.then(()=>n.remove()).catch(()=>n.remove());setTimeout(()=>{a.cancel();n.remove();},850);
+      }
+    });
+    card.addEventListener('auxclick',e=>{if(e.button===1)count('click',card.dataset.linkId);});
+  });
 })();</script></body></html>
