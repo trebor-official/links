@@ -6,7 +6,7 @@
 <link rel="canonical" href="https://trebor-official.github.io/links/"><meta property="og:url" content="https://trebor-official.github.io/links/"><meta property="og:image" content="https://trebor-official.github.io/links/social-preview.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root{color-scheme:dark;--bg:#101713;--fg:#F4F6EF;--accent:#00F1C8;--on-accent:#101713;--radius:20.0px}
+:root{color-scheme:dark;--bg:#101713;--fg:#F4F6EF;--accent:#00F1C8;--on-accent:#101713;--radius:25.439785714285716px}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}button{font:inherit}svg{width:24px;height:24px;display:block}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:5px}.skip{position:fixed;top:-100px;left:16px;z-index:20;background:var(--fg);color:var(--bg);padding:14px}.skip:focus{top:12px}
 main{max-width:1600px;margin:auto;padding:0 5%}.masthead{display:flex;justify-content:space-between;align-items:center;padding:24px 0 18px;border-bottom:1px solid color-mix(in srgb,var(--fg) 25%,transparent);font:11px/1.4 monospace;letter-spacing:.1em}.mast-brand{display:flex;align-items:center;gap:10px;font:bold 21px Arial;letter-spacing:-.07em}.mast-brand b{color:var(--accent)}.avatar{border-radius:50%;object-fit:cover}.mast-note{max-width:50%;text-align:right;font-size:10px}.intro{position:relative;z-index:2;padding-top:28px;pointer-events:none}.eyebrow{font:10px/1.4 monospace;letter-spacing:.13em;margin:0 0 8px}.wordmark{font-family:Arial,Helvetica,sans-serif;font-size:clamp(80px,22vw,340px);font-weight:900;line-height:.79;letter-spacing:-.095em;margin:0 0 0 -.012em;overflow-wrap:anywhere}.wordmark .last{color:var(--accent);transition:color .7s}.composition{display:grid;grid-template-columns:minmax(0,1fr);margin-top:24px}.story{min-width:0}.bio{font-size:clamp(26px,4.1vw,56px);font-weight:700;letter-spacing:-.055em;line-height:1.08;white-space:pre-line;overflow-wrap:anywhere;max-width:540px;margin:0}.section-label{display:flex;align-items:center;gap:12px;font:10px/1.5 monospace;text-transform:uppercase;letter-spacing:.12em;margin:26px 0 12px}.section-label:before{content:'';width:24px;height:2px;background:var(--accent)}
 nav{display:grid;gap:0;border-top:1px solid color-mix(in srgb,var(--fg) 28%,transparent)}.card{position:relative;display:flex;gap:16px;align-items:center;min-height:88px;padding:18px 12px;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--fg) 28%,transparent);border-radius:var(--radius);transition:background .2s,transform .2s;color:var(--fg)}.card.featured{background:var(--accent);color:var(--on-accent);border-color:var(--accent);margin-top:8px}.card[hidden]{display:none}.number{font:10px monospace;opacity:.75}.icon svg{width:26px;height:26px}.copy{min-width:0;flex:1;overflow-wrap:anywhere}.copy strong{display:block;font-size:25px;letter-spacing:-.045em}.copy small{display:block;font-size:12px;line-height:1.5;margin-top:3px}.arrow{transition:transform .2s}.arrow svg{width:22px;height:22px}.card:active{transform:scale(.985)}
@@ -240,16 +240,30 @@ if(scene){
   reduced.addEventListener('change',()=>{if(reduced.matches)document.querySelectorAll('.card,.wordmark,.click-particle').forEach(n=>n.getAnimations().forEach(a=>a.cancel()));items.forEach(sync);});
   window.addEventListener('pagehide',()=>{items.forEach(i=>{i.animation?.cancel();i.animation=null;});});
   window.addEventListener('pageshow',()=>items.forEach(sync));
-})();</script><style>
-.return-welcome{color:var(--fg);background:var(--bg,#101813);border:1px solid var(--accent);border-radius:26px;padding:clamp(24px,6vw,42px);width:min(420px,calc(100vw - 40px));box-sizing:border-box;box-shadow:0 25px 100px #0008;text-align:center}
+})();</script><script>const treborPopup={"title":"Na, wieder da?","answers":[{"title":"hatte kurz Hoffnung 😂","id":"2EF03A98-CEDC-4580-B9FC-37E056506872"},{"title":"upsi 🤭","id":"741053EA-ADDF-4AF6-8940-813166E33C19"},{"title":"hab mich verklickt, ich schwöre","id":"E0A84584-6B70-4F40-B173-92B11E0EC079"},{"title":"der war nicht schlecht","id":"B2C2F2C0-B4B3-4291-BA67-F820F335FB18"}],"message":"Was hast du denn bitte von uns gedacht? Jetzt sind wir auf deine Ausrede gespannt.","enabled":true};const treborPopupEndpoint="https:\/\/trebor-contact.trebor-official.workers.dev";const treborPopupPreview=false;</script><style>
+.return-welcome{color:var(--fg);background:var(--bg,#101813);border:1px solid var(--accent);border-radius:26px;padding:clamp(24px,6vw,42px);width:min(420px,calc(100vw - 40px));box-sizing:border-box;box-shadow:0 25px 100px #0008;text-align:center;max-height:90dvh;overflow:auto}
 .return-welcome::backdrop{background:#041316b8;backdrop-filter:blur(8px)}
-.return-welcome .wink{font-size:48px;display:block;margin-bottom:16px}.return-welcome h2{font:800 clamp(26px,7vw,36px)/1.08 system-ui;letter-spacing:-1px;margin:0 0 18px}.return-welcome p{line-height:1.6;margin:0 0 24px}.return-welcome button{font:700 16px system-ui;min-height:48px;padding:12px 24px;border:0;border-radius:24px;background:var(--accent);color:#081313;cursor:pointer}.return-welcome button:focus-visible{outline:3px solid var(--fg);outline-offset:4px}
+.return-welcome .wink{font-size:48px;display:block;margin-bottom:16px}.return-welcome h2{font:800 clamp(26px,7vw,36px)/1.08 system-ui;letter-spacing:-1px;margin:0 0 18px}.return-welcome p{line-height:1.6;margin:0 0 24px}.return-welcome button{display:block;width:100%;margin-top:10px;font:700 16px system-ui;min-height:48px;padding:12px 24px;border:0;border-radius:24px;background:var(--accent);color:#081313;cursor:pointer}.return-welcome button:focus-visible{outline:3px solid var(--fg);outline-offset:4px}
 </style>
 <script>(()=>{
   let pending=null,left=false,shown=false;
   const dialog=document.createElement('dialog');dialog.className='return-welcome';dialog.setAttribute('aria-labelledby','return-title');dialog.setAttribute('aria-describedby','return-copy');
-  dialog.innerHTML='<span class="wink" aria-hidden="true">👀</span><h2 id="return-title">Na, wieder da?</h2><p id="return-copy">Was hast du denn bitte von uns gedacht?<br>Wir müssen reden. Oder du klickst einfach auf einen der anderen Links.</p><button type="button" autofocus>Okay, erwischt.</button>';
-  document.body.append(dialog);dialog.querySelector('button').addEventListener('click',()=>dialog.close());
+  dialog.innerHTML='<span class="wink" aria-hidden="true">👀</span><h2 id="return-title"></h2><p id="return-copy"></p><div class="popup-answers"></div>';
+  dialog.querySelector('h2').textContent=treborPopup.title;dialog.querySelector('p').textContent=treborPopup.message;
+  let answered=false;
+  for(const answer of treborPopup.answers.slice(0,8)){
+    const button=document.createElement('button');button.type='button';button.textContent=answer.title;button.dataset.answerId=answer.id;
+    button.addEventListener('click',()=>{
+      if(answered)return;answered=true;
+      if(treborPopupEndpoint&&!navigator.globalPrivacyControl&&navigator.doNotTrack!=='1')fetch(treborPopupEndpoint.replace(/\/$/,'')+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'popup',link:answer.id}),credentials:'omit',referrerPolicy:'no-referrer',keepalive:true}).catch(()=>{});
+      dialog.close();
+    });dialog.querySelector('.popup-answers').append(button);
+  }
+  document.body.append(dialog);
+  if(treborPopupPreview){
+    const replay=document.createElement('button');replay.textContent='Popup-Vorschau öffnen';replay.style.cssText='margin:24px;padding:14px;font:16px system-ui';document.body.append(replay);
+    replay.addEventListener('click',()=>{answered=false;dialog.setAttribute('open','');});dialog.setAttribute('open','');return;
+  }
   dialog.addEventListener('close',()=>{pending?.focus({preventScroll:true});pending=null;});
   function returned(){if(!pending||!left||shown||document.hidden)return;if(document.querySelector('dialog[open]'))return;shown=true;dialog.showModal();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)dialog.animate([{opacity:0,transform:'translateY(18px) scale(.96)'},{opacity:1,transform:'translateY(0) scale(1)'}],{duration:350,easing:'cubic-bezier(.2,.8,.2,1)'});}
   document.querySelectorAll('a.platform-onlyfans').forEach(card=>{

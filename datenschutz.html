@@ -55,36 +55,41 @@ Die EU-Einstellung unserer Nachrichtendatenbank bedeutet nicht, dass sämtliche 
 Weitere Angaben zur Verarbeitung für Cloudflares eigene Zwecke:
 https://www.cloudflare.com/privacypolicy/
 
-7. Anonyme Aufruf- und Klickstatistik
+7. Zählung von Seitenaufrufen, Linkklicks und Popup-Antworten
 
-Wir verwenden eine sparsame Reichweitenmessung, um zu erkennen, wie häufig unsere Website aufgerufen wird und welche Links genutzt werden. Die Auswertung dient der Verbesserung unseres Auftritts. Sie dient nicht dazu, einzelne Besucher zu identifizieren oder personalisierte Werbung anzuzeigen.
+Zweck der Auswertung
+Wir verwenden eine sparsame Reichweitenmessung, um zu sehen, wie häufig unsere Website aufgerufen wird, welche Linkkarten genutzt werden und welche vorgegebenen Antworten im Rückkehr-Popup ausgewählt werden. Wir werten diese Ereignisse als Summen für Zeiträume aus, beispielsweise für sieben Tage, einen Monat oder einen selbst gewählten Zeitraum. Bei Popup-Antworten können wir außerdem den Anteil der jeweiligen Antwort an allen gezählten Antworten vergleichen. Die Auswertung dient der Verbesserung unseres Auftritts, nicht der Identifizierung einzelner Besucher oder personalisierter Werbung.
 
-Übermittelte Daten
-Beim ersten sichtbaren Anzeigen eines geladenen Seitendokuments wird ein Aufrufereignis übermittelt. Beim Aktivieren einer Social-Linkkarte wird ein Klickereignis übermittelt.
-Die Statistik-Nutzdaten enthalten ausschließlich die Ereignisart und bei Klicks eine interne Linkkennung. Diese Kennung bezeichnet die Karte, nicht den Besucher. Namen, E-Mail-Adressen, Nachrichteninhalte, vollständige Linkziele und Gerätekennungen sind nicht Bestandteil dieser Nutzdaten.
+Welche Ereignisse gezählt werden
+Beim ersten sichtbaren Anzeigen eines geladenen Seitendokuments wird ein Aufrufereignis gesendet. Beim Aktivieren einer Social-Linkkarte wird ein Linkklick gezählt. Wenn du im Rückkehr-Popup nach dem Spaß-Link einen vorgegebenen Antwortbutton auswählst, wird diese Auswahl als eigenes Antwortereignis gezählt. Das bloße Öffnen des Popups und ein Verlassen ohne Auswahl werden nicht gezählt. Pro angezeigtem Rückkehr-Popup wird höchstens eine Antwort übermittelt.
 
-Gespeicherte Daten
-Unser Dienst erhöht lediglich Tageszähler für die Ereignisart und die jeweilige Linkkennung. Die Tagesgrenzen richten sich nach UTC.
-In unserer Statistikdatenbank speichern wir keine IP-Adressen, individuellen Besucherkennungen, Geräteprofile, Standortinformationen oder genauen Zeitpunkte einzelner Besuche. Es gibt keine Zuordnung zu Nachrichten aus dem Kontaktformular.
-Für diese Messung setzen wir keine Analyse-Cookies, dauerhaften Browserkennungen oder Fingerprinting ein.
+Übermittelte und gespeicherte Daten
+Die von unserem Statistikskript gesendeten Nutzdaten enthalten ausschließlich die Ereignisart und bei Linkklicks oder Popup-Antworten eine interne Button-Kennung. Die Kennung bezeichnet den Link beziehungsweise die vorgegebene Antwort, nicht den Besucher. Sie ermöglicht uns, die Zählung der jeweiligen Beschriftung zuzuordnen. Namen, E-Mail-Adressen, Nachrichteninhalte, Freitextantworten, vollständige Linkziele und Gerätekennungen sind nicht Bestandteil dieser Nutzdaten.
+Unser Dienst erhöht Tageszähler für die Ereignisart und die jeweilige Kennung. Die Tagesgrenzen richten sich nach UTC. Einzelereignisse mit genauen Zeitpunkten, IP-Adressen, individuellen Besucherkennungen, Geräteprofilen oder Standortinformationen werden in unserer Statistikdatenbank nicht gespeichert. Es gibt keine Verknüpfung zwischen einem Seitenaufruf, einem Linkklick, einer Popup-Antwort und einer Nachricht aus dem Kontaktformular. Wir erstellen keine individuellen Besuchsverläufe.
+Für diese Zählung setzen wir keine Analyse-Cookies, dauerhaften Browserkennungen oder Fingerprinting ein.
 
 Technische Übermittlung und Rechtsgrundlage
-Die Ereignisse werden verschlüsselt an unseren Cloudflare-Dienst gesendet. Dabei erhält Cloudflare technisch notwendige Verbindungsdaten, insbesondere die IP-Adresse. Die gesamte Übermittlung ist deshalb nicht ausschließlich anonym; anonym aggregiert sind die von uns gespeicherten Tageszähler.
-Soweit bei der technischen Übermittlung personenbezogene Daten verarbeitet werden, stützen wir unsere Reichweitenmessung auf Art. 6 Abs. 1 Buchst. f DSGVO. Unser berechtigtes Interesse ist die Beurteilung der Seitennutzung ohne Besucherprofile. Für die Verarbeitung durch Cloudflare gelten ergänzend die Angaben in Abschnitt 6.
+Die Ereignisse werden verschlüsselt an unseren Cloudflare-Dienst gesendet. Cloudflare erhält dabei technisch notwendige Verbindungsdaten, insbesondere deine IP-Adresse. Die Übermittlung ist deshalb nicht vollständig anonym; anonym aggregiert sind die von uns gespeicherten Tageszähler.
+Soweit bei der technischen Übermittlung personenbezogene Daten verarbeitet werden, stützen wir die Reichweitenmessung auf Art. 6 Abs. 1 Buchst. f DSGVO. Unser berechtigtes Interesse besteht darin, die Nutzung unserer Seite, ihrer Links und der interaktiven Antwortmöglichkeiten ohne Besucherprofile auszuwerten. Für die Verarbeitung durch Cloudflare gelten ergänzend die Angaben in Abschnitt 6. Die Einwilligung in den Bot-Schutz des Kontaktformulars ist hiervon getrennt und erteilt keine Einwilligung in die Statistik.
 
-Datenschutzsignale und Speicherdauer
-Bei aktiviertem Global Privacy Control oder dem Browserwert Do Not Track „1“ sendet unser Statistikskript keine Ereignisse. Die Website und ihre Links bleiben nutzbar. Die Mac-App-Vorschau sendet ebenfalls keine Statistikereignisse.
-Tageszähler werden nach 366 Tagen im nächsten täglichen Bereinigungslauf gelöscht. Wiederherstellbare Datenbanksicherungen können noch bis zu sieben Tage zurückreichen. Die Auswertung ist nur über unseren geschützten Betreiberzugang zugänglich.
+Datenschutzsignale und Widerspruch
+Bei aktiviertem Global Privacy Control oder dem Browserwert Do Not Track „1“ senden unsere Statistikskripte keine Aufruf-, Linkklick- oder Popup-Antwortereignisse. Die Seite, ihre Links und die Antwortbuttons bleiben nutzbar. Auch die Vorschau in der Mac-App sendet keine Statistikereignisse.
+Soweit personenbezogene Daten auf Grundlage berechtigter Interessen verarbeitet werden, kannst du aus Gründen deiner besonderen Situation widersprechen. Dafür erreichst du uns unter trebor.rebi@gmail.com. Da wir keine individuellen Besucherkennungen speichern, können wir bereits aggregierte Zählwerte nicht nachträglich einer bestimmten Person zuordnen.
+
+Speicherdauer und Zugriff
+Tageszähler, deren Datum mehr als 366 Tage zurückliegt, werden im nächsten täglichen Bereinigungslauf gelöscht. Wir können die bisherigen Statistikwerte auch vorher vollständig zurücksetzen, beispielsweise nach einer Testphase. Neue Ereignisse werden anschließend erneut gezählt. Ein Statistik-Reset löscht keine Nachrichten aus dem Kontaktformular.
+Gelöschte Daten können im verwendeten kostenlosen Cloudflare-D1-Tarif noch bis zu sieben Tage in wiederherstellbaren Datenbankständen enthalten sein:
+https://developers.cloudflare.com/d1/reference/time-travel/
+Die Auswertung ist nur über unseren geschützten Betreiberzugang zugänglich.
 
 Grenzen der Auswertung
-Gezählt werden Aufrufe und Klicks, keine eindeutigen Personen. Wiederholte Besuche und Klicks können mehrfach zählen. Bots, Browserblocker und Verbindungsfehler können die Ergebnisse beeinflussen. Aus einem Klick erkennen wir nicht, wer geklickt hat oder ob die Zielseite anschließend tatsächlich genutzt wurde.
-Mangels Besucherkennung können wir einzelne Besuche nicht nachträglich einer Person zuordnen oder gezielt aus einem Tageszähler herauslösen.
+Gezählt werden Ereignisse, keine eindeutigen Personen. Erneutes Laden, wiederholte Besuche oder mehrere Linkklicks können mehrfach zählen. Bots, Browserblocker, Datenschutzsignale und Verbindungsfehler beeinflussen die Ergebnisse. Die Antwortanteile beziehen sich nur auf tatsächlich gezählte Antworten und sind keine repräsentative Aussage über alle Besucher. Wir erkennen nicht, wer eine Antwort gewählt hat oder ob eine angeklickte Zielseite anschließend tatsächlich genutzt wurde.
 
 8. Externe Links und Seiteneffekte
 
 Unsere Social-Karten sind externe Links und keine eingebetteten Social-Media-Feeds. Beim Folgen eines Links öffnet sich die jeweilige Zielseite. Dort gelten die Datenschutzbedingungen des jeweiligen Anbieters. Die Beschriftung einer Karte kann Teil eines Spaß-Links sein; maßgeblich ist das tatsächliche Linkziel.
 Wir verwenden keine Werbepixel oder Marketing-Tracker.
-Für den einmaligen Rückkehrgruß nach dem Spaß-Link wird lediglich ein vorübergehender Zustand im Arbeitsspeicher des geöffneten Browser-Tabs verwendet. Dafür speichern wir keine dauerhafte Kennung und senden kein zusätzliches Statistikereignis.
+Für den einmaligen Rückkehrgruß nach dem Spaß-Link wird lediglich ein vorübergehender Zustand im Arbeitsspeicher des geöffneten Browser-Tabs verwendet. Dafür speichern wir keine dauerhafte Kennung. Wenn die Statistik aktiviert ist und du einen Antwortbutton auswählst, zählen wir dessen Kennung als anonym aggregierte Antwort nach den Regeln in Abschnitt 7. Das Öffnen und das Schließen ohne Antwort werden nicht gezählt. Die Auswahl wird weder mit einer Person noch mit einer Kontaktanfrage verknüpft.
 
 9. Deine Rechte
 
