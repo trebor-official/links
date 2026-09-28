@@ -4,4 +4,4 @@ treboR
 
 Dieser Auftritt wird derzeit als persönliches Hobby ohne Einnahmen betrieben.
 
-</div></main></body></html>
+</div></main><script>(()=>{const motion=matchMedia('(prefers-reduced-motion: reduce)');document.querySelectorAll('.link-video').forEach(v=>{let visible=false;v.muted=true;function update(){if(visible&&!document.hidden&&!motion.matches){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{});}else {v.pause();if(motion.matches){v.removeAttribute('src');v.load();}}}new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;update();}).observe(v);document.addEventListener('visibilitychange',update);motion.addEventListener('change',update);});})();</script></body></html>
